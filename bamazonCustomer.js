@@ -1,6 +1,8 @@
+var log = require("single-line-log").stdout;
 var mysql = require("mysql");
 var Table = require("cli-table");
 var inquirer = require("inquirer");
+var Timer = require("tiny-timer");
 
 var connection = mysql.createConnection({
   host: "127.0.0.1",
@@ -92,6 +94,131 @@ function showCategories() {
             categoryTable.toString() +
             "\n"
         );
+
+        buyConfirm();
       });
   });
+
+  function buyConfirm() {
+    inquirer
+      .prompt([
+        {
+          name: "buy",
+          type: "confirm",
+          message: "Would you like to buy an item?",
+          default: true
+        }
+      ])
+      .then(function(user) {
+        if (user.buy === true) {
+          buyAction();
+        } else {
+          waitAction();
+        }
+      });
+  }
+
+  function buyAction() {
+    inquirer
+      .prompt([
+        {
+          name: "id",
+          type: "input",
+          message:
+            "Which item would you like to buy?\nPlease refer to the shown category table for item ID number and enter the desired number below."
+        },
+        {
+          name: "amount",
+          type: "input",
+          message: "How many woukd you like to buy?"
+        }
+      ])
+      .then(function(userSelect) {
+        connection.query(
+          "SELECT * FROM products WHERE item_id=?",
+          userSelect.id,
+          function(err, res) {
+            var divider = "===================================================";
+
+            for (let i = 0; i < res.length; i++) {
+              if (userSelect.amount > res[i].stock_quantity) {
+                console.log(
+                  divider +
+                    "\nWe sincerely apologize! We do not have enough of this specific item in stock. Please check with us at a later date.\n" +
+                    divider
+                );
+                waitAction();
+              } else {
+                var categoryTable = new Table({
+                  head: ["Product", "Category", "Price", "Quantity", "Total"],
+                  colWidths: [45, 45, 10, 10, 10]
+                });
+
+                var productName = res[i].product_name,
+                  categoryName = res[i].department_name,
+                  price = "$ " + res[i].price,
+                  buyQuantity = userSelect.amount;
+                buyTotal = res[i].price * userSelect.amount;
+                payTotal = "$ " + buyTotal;
+
+                categoryTable.push([
+                  productName,
+                  categoryName,
+                  price,
+                  buyQuantity,
+                  payTotal
+                ]);
+
+                console.log(
+                  divider +
+                    "\nThank you, this product is currently in stock!\n" +
+                    divider +
+                    "\nYou have selected the following item(s):\n" +
+                    categoryTable.toString() +
+                    "\n" +
+                    divider
+                );
+
+                var newStock = res[i].stock_quantity - userSelect.amount;
+                var buyID = userSelect.id;
+
+                checkPurchase(newStock, buyID);
+              }
+            }
+          }
+        );
+      });
+  }
+
+  function waitAction() {
+    inquirer
+      .prompt([
+        {
+          name: "confirm",
+          type: "confirm",
+          message: "Go back to category menu?",
+          default: true
+        }
+      ])
+      .then(function(user) {
+        if (user.confirm === true) {
+          showCategories();
+        } else {
+          var timer = new Timer({ interval: 1000, stopwatch: false });
+          var counter = 30;
+
+          timer.on("tick", ms => {
+            counter--, log(counter);
+          });
+          timer.on("done", () => {
+            console.log("\nTime's Up!"), waitAction();
+          });
+          timer.on("statusChanged", status =>
+            console.log("\nCountdown:", status)
+          );
+
+          timer.start(30000);
+        }
+      });
+  }
 }
