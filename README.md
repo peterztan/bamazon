@@ -18,6 +18,6 @@ This application aims to help solve the cumbersome modern online shopping proble
 
 1. First and foremost, make sure you clone this repository as shown below:
 
-    ![How to clone](./recordings/clone.mp4)
+    ![How to clone](./recordings/clone.gif)
 
 First, open up a terminal and type in `node bamazonCustomer.js`
