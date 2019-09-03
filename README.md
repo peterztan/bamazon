@@ -43,3 +43,16 @@ This application aims to help solve the cumbersome modern online shopping proble
 7. From here, it will be shown below a normal workflow of the buying process:
 
     ![buying](./recordings/buying.gif)
+
+    * Here you can see that you have the option to go back to the previous category menu after your purchase in case you wanted to buy something else; or the same thing if you changed your mind and wanted one more of the same item. The system then reduce the stock of that item by the amount that you decided to buy.
+    * The system also gives you a total of what your bill will likely be, and since it is based on a Utopian society where no sales taxes are forced upon online transactions, you only have to pay for the raw total (HURRAY!!!)
+
+8. Sometimes it's tough being a customer, and we GOTCHU, below shows the process/options available if you are not sure what to buy or decided not to want something:
+
+    ![bad day](./recordings/bad-day.gif)
+
+    * As you can see, if you are feeling quite undecisive looking at our huge amount of inventory, you have to options to explore around, go back, stare at the Taylor Swift collection for 30 seconds, or exit.
+
+9. What if you feel like buying something, and then suddenly don't want it anymore? No worries, we have a solution for that, we can simply let you cancel your order and even give you the option to go back and browse the other items, or leave. How great is that?!
+
+    ![really not sure](./recordings/bad-day2.gif)
