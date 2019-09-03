@@ -56,3 +56,15 @@ This application aims to help solve the cumbersome modern online shopping proble
 9. What if you feel like buying something, and then suddenly don't want it anymore? No worries, we have a solution for that, we can simply let you cancel your order and even give you the option to go back and browse the other items, or leave. How great is that?!
 
     ![really not sure](./recordings/bad-day2.gif)
+
+### The People that made this all possible
+
+    ![You and me](https://media.giphy.com/media/RcRZzw1cjixeXPEFGg/giphy.gif)
+
+    # Peter Z. Tan (a.k.a RandomRamen)
+
+### Always remember the GREAT words:
+
+    > "Any program is only as good as it is useful."
+    > - Linus Torvalds
+
