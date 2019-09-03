@@ -27,3 +27,11 @@ This application aims to help solve the cumbersome modern online shopping proble
 3. Proceed to the bamazon root folder, and then type `npm i` to install the application dependancies:
 
     ![Install](./recordings/Install.gif)
+
+4. In the bamazon root folder, type `node bamazonCustomer.js` to initiate the CLI:
+
+    ![Initiate](./recordings/Initiate.gif)
+
+5. As you can see, the CLI has started, and you can navigate around using the options given on screen:
+
+    ![First round](./recordings/1stround.gif)
