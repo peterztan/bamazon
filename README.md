@@ -59,12 +59,12 @@ This application aims to help solve the cumbersome modern online shopping proble
 
 ### The People that made this all possible
 
-    ![You and me](https://media.giphy.com/media/RcRZzw1cjixeXPEFGg/giphy.gif)
+![You and me](https://media.giphy.com/media/RcRZzw1cjixeXPEFGg/giphy.gif)
 
-    # Peter Z. Tan (a.k.a RandomRamen)
+# Peter Z. Tan (a.k.a RandomRamen)
 
 ### Always remember the GREAT words:
 
-    > "Any program is only as good as it is useful."
-    > - Linus Torvalds
+> "Any program is only as good as it is useful."
+> - Linus Torvalds
 
