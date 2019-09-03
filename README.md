@@ -26,4 +26,4 @@ This application aims to help solve the cumbersome modern online shopping proble
 
 3. Proceed to the bamazon root folder, and then type `npm i` to install the application dependancies:
 
-    ![Install](./recordings/install.gif)
+    ![Install](./recordings/Install.gif)
