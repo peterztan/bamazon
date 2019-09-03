@@ -35,3 +35,11 @@ This application aims to help solve the cumbersome modern online shopping proble
 5. As you can see, the CLI has started, and you can navigate around using the options given on screen:
 
     ![First round](./recordings/1stround.gif)
+
+6. It can be seen from above that when you choose a category, you can see the inventory associated with that category, from there, you will be asked whether or not you want to buy an item, where you can use the id shown in the inventory table to choose the specific item you want, and specify the amount of that item that you would like to purchase:
+
+    ![Second round](./recordings/2ndround.gif)
+
+7. From here, it will be shown below a normal workflow of the buying process:
+
+    ![buying](./recordings/buying.gif)
