@@ -20,4 +20,6 @@ This application aims to help solve the cumbersome modern online shopping proble
 
     ![How to clone](./recordings/clone.gif)
 
-First, open up a terminal and type in `node bamazonCustomer.js`
+2. Then, navigate to the place that you want to clone the directory and place it there by typing `git clone https://github.com/peterztan/bamazon.git`, as shown below:
+
+    ![Cloning](./recordings/clone2.gif)
